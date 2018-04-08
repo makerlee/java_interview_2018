@@ -2,7 +2,8 @@
 - 封装
 - 继承
 - 多态
-- ![avatar](http://www.cnitblog.com/images/cnitblog_com/lily/1972/o_OOBase.gif)
+ ![avatar](http://www.cnitblog.com/images/cnitblog_com/lily/1972/o_OOBase.gif)
+
 ### final, finally, finalize 的区别
 - final关键字
 - finally 用于try语句块
