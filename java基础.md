@@ -1,0 +1,39 @@
+### 面向对象基本特征
+- 封装
+- 继承
+- 多态
+### final, finally, finalize 的区别
+- final关键字
+- finally 用于try语句块
+- finalize()是Object类的一个方法,与GC有关
+### int 和 Integer 有什么区别
+- int是基本数据类型 初始化值0
+- Integer是int的封装类 初始化值null
+- 自动装箱 自动拆箱的细节
+### 重载和重写的区别
+- override 重写是**父子类之间**多态性的一种体现
+- overload 重载是**同一个类中**多态性的一种体现
+### 抽象类和接口有什么区别
+- 这题太难了 拒绝回答
+### 说说反射的用途及实现
+- 用途的话 最常见的加载数据库驱动
+- 最重要的用途就是开发各种框架 比如spring的IOC、AOP都有用到
+### 说说自定义注解的场景及实现
+- Annotation型定义为@interface
+- 举个例子 现在有个需求：通过aop监控接口调用的总时间(请求到来-返回响应)，
+但是只要监控部分接口，有的需要监控。这时可以自定义一个注解，在需要监控的
+接口函数上加上此注解，配合AOP即可实现。Student.getClass.getAnnotation(NeedMonitor.class)
+### HTTP 请求的 GET 与 POST 方式的区别
+- https://www.oschina.net/news/77354/http-get-post-different
+- 按照上边这个博客的说法, 他们的没什么区别
+### session 与 cookie 区别
+- 参考:https://www.zhihu.com/question/19786827
+- 为什么要有session机制
+- 由于http协议是无状态的 session用来跟踪用户状态
+### session 分布式处理
+- session复制
+- session粘滞
+- session集中管理
+### equals 与 == 的区别
+- 还有公司会问？
+- 一定记得要分 基本*数据类型*和*普通对象*
