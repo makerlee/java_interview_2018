@@ -39,3 +39,16 @@
 ### equals 与 == 的区别
 - 还有公司会问？
 - 一定记得要分 基本*数据类型*和*普通对象*
+### wait和sleep的区别
+1.
+### 数组在内存中如何分配
+1. 数组也是对象 JVM和普通java对象一样处理数组
+2. 没有真正的多维数组
+### 异常分类以及处理机制
+        	throwable
+        		Error                 jvm处理
+        		Exception  
+        			checked Exception 需要在方法上声明 向上抛出
+        			runtime Exception 不必需处理
+### Cloneable接口实现原理     	
+1. 
