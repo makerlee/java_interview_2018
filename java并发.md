@@ -50,9 +50,9 @@ synchronized方法 不会产生互斥
 3.
 ### Java 内存模型？
 - JMM是围绕着在并发过程中如何处理*原子性*、*可见性*和*有序性*这3个特征来建立的.
-1.
-2.
-3.
+1. 原子性：JMM直接保证原子性变量操作 load read assign use write store
+2. 可见性：当一个线程修改了共享变量的值，其他线程可以立刻得知这个修改。volatile、synchronized、final
+3. 有序性：单线程总是有序的；多线程靠volatile和synchronized保证线程之间操作的有序性
 ### 如何保证多线程下 i++ 结果正确？
 1. sychronized同步方法或者代码块
 2. 原子类
