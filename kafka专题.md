@@ -5,8 +5,12 @@
 2. HW HighWatermark
 3. LEO Log End Offset
 ### Kafka消息是否会丢失？为什么？
-1. 当然会丢失
-2. at most once 当producer的retry设置为0
+1. 当producer向leader发送数据时，可以通过request.required.acks参数来设置数据可靠性的级别
+    1. 1 默认 leader已成功收到数据并得到确认后发送下一条message
+    2. 0 producer无需等待来自broker的确认而继续发送下一批消息 可靠性最低
+    3. -1 producer需要等待ISR中的所有follower都确认接收到数据后才算一次发送完成，
+    可靠性最高。但是这样也不能保证数据不丢失，比如当ISR中只有leader时
+2. 如果要提高数据的可靠性，在设置request.required.acks=-1的同时，也要min.insync.replicas这个参数
 ### kafka最合理的配置？
 - 没有最合理，根据业务场景不同在可靠性和性能之间权衡
 - 当然要告诉面试官至少一种配置 exactly once
@@ -19,3 +23,7 @@
 1. at most once 至少一次
 2. at least once 至多一次
 3. exactly once 正好一次 需要编码和配置来保证
+### 高可靠配置
+1. topic的配置：replication.factor>=3,即副本数至少是3个；2<=min.insync.replicas<=replication.factor
+2. broker的配置：leader的选举条件unclean.leader.election.enable=false
+3. producer的配置：request.required.acks=-1(all)，producer.type=sync
