@@ -35,19 +35,32 @@ synchronized方法 不会产生互斥
 
 　　	3）如果是写操作，它会导致其他CPU中对应的缓存行无效。
 ### CAS 有什么缺陷，如何解决？
-- 目前我只知道ABA问题，通过给数据加版本可以现实区分
+- 参考：http://zl198751.iteye.com/blog/1848575
+- CAS通过调用JNI的代码实现的。JNI:Java Native Interface为JAVA本地调用，允许java调用其他语言。
+而compareAndSwapInt就是借助C来调用CPU底层指令实现的。
+1. ABA问题，通过给数据加版本可以现实区分
+2. 自旋等待时间过长，造成CPU资源浪费
 ### Hashtable 是怎么加锁的 ？
 1. 对数据进行读写的方法都加上synchronized的修饰
 ### ConcurrentHashMap 介绍？1.8 中为什么要用红黑树？
-1.
-2.
+1. 
+2. 
 ### AQS
-1.
-2.
+1. 全称AbstractQueuedSynchronizer 是JUC下提供的一套用于实现基于FIFO等待队列的阻塞锁和相关的同步器的一个同步框架
+2. CountdownLatch、ReentrantLock、Semaphore、FutureTask都是基于AQS来实现的
 ### 如何检测死锁？怎么预防死锁？
-1.
-2.
-3.
+- https://juejin.im/post/5aaf6ee76fb9a028d3753534
+1. 死锁分类：
+    1. 锁顺序死锁
+    2. 动态锁顺序死锁
+    3. 在协作对象之间的死锁
+    4. 资源死锁： 线程池死锁、网络连接池死锁
+2. 死锁检测工具：
+    1. Jstack ---> jstack -F pid 
+    2. JConsole ---> jconsole 会出来图形界面
+3. 死锁的预防：
+    1. 以确定的顺序获取锁
+    2. Lock接口提供的tryLock(long time) 锁等待超时 自动放弃
 ### Java 内存模型？
 - JMM是围绕着在并发过程中如何处理*原子性*、*可见性*和*有序性*这3个特征来建立的.
 1. 原子性：JMM直接保证原子性变量操作 load read assign use write store
@@ -83,7 +96,8 @@ synchronized方法 不会产生互斥
 ### 怎么实现所有线程在等待某个事件的发生才会去执行？
 - CyclicBarrier实现
 ### LockSupport工具
-1.
+1. LockSupport是用来创建锁和其他同步类的基本线程阻塞原语。
+2. 主要方法：park()、 unpark(Thread t)
 ### Condition接口及其实现原理
 1.
 ### Fork/Join框架的理解
