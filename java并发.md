@@ -8,6 +8,7 @@
 synchronized方法 不会产生互斥
 ### synchronized 和 lock 有什么区别？
 - 参考：http://blog.csdn.net/natian306/article/details/18504111
+- ReentrantLock在加锁和内存上的语义和内置相同，此外它还提供了锁等待、可中断、公平性这几个特有功能
 1. 用法区别：
     1. sychronized 可以用在方法上；用在代码块，括号中指定锁对象
     2. 需要显示指定起始位置和终止位置。一般使用ReentrantLock类做为锁，
