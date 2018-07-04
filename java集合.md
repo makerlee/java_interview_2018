@@ -19,8 +19,13 @@
 2.
 3.
 4.
+### Hashtable 是怎么加锁的 ？
+1. 对数据进行读写的方法都加上synchronized的修饰
+### ConcurrentHashMap 介绍？1.8 中为什么要用红黑树？
+1. 
+2. 
 ### Arrays.sort 实现原理
 1. 策略设计模式(strategy pattern);
 2. 归并排序(merge sort): 时间复杂度 n*log(n);
 ### LinkedHashMap的应用
-1.  
+1. 在网上查了 都说是可以基于LinkedHashMap实现LRU(least recently use)

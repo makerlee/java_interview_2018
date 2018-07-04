@@ -19,14 +19,14 @@ synchronized方法 不会产生互斥
 3. 用途区别：
     1. lock能实现一些个性化的需求
 ### 分段锁的原理,锁粒度减小的思考
-1. 总体思想就是减小锁的粒度
-2. 结合concurrentHashMap来说，要不然不好表达
+1. 总体思想就是减小锁的粒度,
+2. 减少锁的竞争
+3. 结合concurrentHashMap来说，要不然不好表达
 ### volatile 的实现原理？
+- JSR-133 JAVA内存模型与线程规范 对volatile的语义进行了重新规范
 - http://www.cnblogs.com/dolphin0520/p/3920373.html
 - 下面这段话摘自《深入理解Java虚拟机》：
-　　	“观察加入volatile关键字和没有加入volatile关键字时所生成的汇编代码发现，
-	加入volatile关键字时，会多出一个lock前缀指令”
-
+“观察加入volatile关键字和没有加入volatile关键字时所生成的汇编代码发现，加入volatile关键字时，会多出一个lock前缀指令”
 - lock前缀指令实际上相当于一个内存屏障（也成内存栅栏），内存屏障会提供3个功能：
 
 　　	1）它确保指令重排序时不会把其后面的指令排到内存屏障之前的位置，也不会把前面的指令排到内存屏障的后面；
@@ -41,11 +41,7 @@ synchronized方法 不会产生互斥
 而compareAndSwapInt就是借助C来调用CPU底层指令实现的。
 1. ABA问题，通过给数据加版本可以现实区分
 2. 自旋等待时间过长，造成CPU资源浪费
-### Hashtable 是怎么加锁的 ？
-1. 对数据进行读写的方法都加上synchronized的修饰
-### ConcurrentHashMap 介绍？1.8 中为什么要用红黑树？
-1. 
-2. 
+
 ### AQS
 1. 全称AbstractQueuedSynchronizer 是JUC下提供的一套用于实现基于FIFO等待队列的阻塞锁和相关的同步器的一个同步框架
 2. CountdownLatch、ReentrantLock、Semaphore、FutureTask都是基于AQS来实现的
