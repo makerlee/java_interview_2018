@@ -44,7 +44,7 @@ synchronized方法 不会产生互斥
 
 ### AQS
 1. 全称AbstractQueuedSynchronizer 是JUC下提供的一套用于实现基于FIFO等待队列的阻塞锁和相关的同步器的一个同步框架
-2. CountdownLatch、ReentrantLock、Semaphore、FutureTask都是基于AQS来实现的
+2. CountdownLatch、ReentrantLock、Semaphore、FutureTask(新版本不是依赖AQS了)都是基于AQS来实现的
 ### 如何检测死锁？怎么预防死锁？
 - https://juejin.im/post/5aaf6ee76fb9a028d3753534
 1. 死锁分类：
@@ -82,8 +82,8 @@ synchronized方法 不会产生互斥
 
 3. 通过扩展线程池进行监控,见上题链接
 ### ThreadLocal原理，用的时候需要注意什么？
-1.
-2.
+1. https://blog.csdn.net/lovesomnus/article/details/64441426
+2. https://droidyue.com/blog/2016/03/13/learning-threadlocal-in-java/
 ### CountDownLatch 和 CyclicBarrier 、Semaphore的用法，以及相互之间的差别?
 - https://www.cnblogs.com/dolphin0520/p/3920397.html
 - 他们都是java并发编程里的辅助类，位于java.util.concurrent
