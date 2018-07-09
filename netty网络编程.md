@@ -38,5 +38,6 @@
 ### Netty 内部执行流程
 1.
 ### Netty重连实现
-1.
-2.
+- http://tterm.blogspot.com/2014/03/netty-tcp-client-with-reconnect-handling.html
+1. channelFutureListener
+2. inActive
