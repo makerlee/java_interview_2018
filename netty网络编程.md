@@ -3,6 +3,14 @@
 1. 说java原生NIO的缺点
 2. netty的优点：Netty是一个高性能、异步事件驱动的NIO框架，
    它提供了对TCP、UDP和文件传输的支持，作为一个异步NIO框架
+### 常用tcp参数
+- https://blog.csdn.net/yangguosb/article/details/79185799
+1. SO_SNDBUF
+2. SO_RCVBUF
+3. TCP_NODELAY
+4. SO_KEEPALIVE: 是否使用TCP的心跳机制
+5. SO_REUSERADDR: 是否复用处于TIME_WAIT状态连接的端口
+6. SO_BACKLOG
 ### 说说业务中，Netty 的使用场景
 1. 分布式框架中rpc通信
 2. 自定义应用层协议实现
