@@ -15,7 +15,9 @@
 1. 分布式框架中rpc通信
 2. 自定义应用层协议实现
 ### 原生的 NIO 在 JDK 1.7 版本存在 epoll bug
+- https://blog.csdn.net/a925907195/article/details/73853771
 1. cpu 100%
+2. netty 屏蔽掉这个bug
 ### 什么是TCP 粘包/拆包,解决办法
 1. tcp是基于stream的，他对上层应用层协议是无感知的。tcp segment的大小受MTU和网络状况
 的影响可能会把一条应用消息分割成两次发送，也可能会把两条或多条应用消息组合发送
