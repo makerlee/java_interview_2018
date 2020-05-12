@@ -74,7 +74,7 @@ synchronized方法 不会产生互斥
 - 参考:http://gityuan.com/2016/01/16/thread-pool/
 1. JDK针对不同需求，利用Executors类提供了4种不同的线程池(还有一些组合的)：
 	  newCachedThreadPool, newFixedThreadPool, newScheduledThreadPool, newSingleThreadExecutor
-2. 
+2. 基础ThreadPoolExecutor的核心参数,底层依赖AQS
 ### 分析线程池的实现原理和线程的调度过程？
 - 见上题链接
 ### 线程池如何调优，最大数目如何确认？
