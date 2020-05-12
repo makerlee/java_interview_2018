@@ -1,3 +1,6 @@
+## 2020年更新
+java并发书籍推荐《java并发编程实战》、《java并发编程的艺术》
+
 ### synchronized 的实现原理以及锁优化？
 1. 参考:http://blog.csdn.net/javazejian/article/details/72828483
 2. 优化要多扯,大谈特谈。具体参考《java并发编程实战》,讲的比较系统
